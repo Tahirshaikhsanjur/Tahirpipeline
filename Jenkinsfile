@@ -3,8 +3,10 @@ pipeline {
 
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
-        maven "M3"
-        withEnv( ["D:\college\devlop practicals\maven-experiment\apache-maven-3.6.3-bin\apache-maven-3.6.3=${tool mvn_version}/bin"] )
+       // maven "M3"
+        //withEnv( ["D:\college\devlop practicals\maven-experiment\apache-maven-3.6.3-bin\apache-maven-3.6.3=${tool mvn_version}/bin"] )
+        def mvn_version = 'M3'
+        withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] )
     }
 
     stages {
